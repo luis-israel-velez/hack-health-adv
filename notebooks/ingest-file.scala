@@ -3,10 +3,17 @@
 
 // COMMAND ----------
 
+val date = java.time.LocalDate.now.toString()
+val year = date.split("-")(0) + "/"
+val month = date.split("-")(1) + "/"
+val day = date.split("-")(2) + "/"
+
+println(path+"landing/lv-iot-streaming/01/" + year + month  + day)
+
 val df = spark
   .read.format("avro")
   .option("infereSchema", true)
-  .load(path+"landing/lv-iot-streaming/01/2019/09/28/*") //TODO: Parametes?
+  .load(path+"landing/hack-eastus2-iothealthadv/00/"+ year + month  + "*/*") //TODO: Parametes? (We can add day)
 
 
 // COMMAND ----------
@@ -31,18 +38,25 @@ val impressionsDF = df
 // COMMAND ----------
 
 
-val advertsSchema = new StructType()
+val storeSchema = new StructType()
     .add("EntityType", StringType, true)
-    .add("createdDate", StringType, true)
-    .add("advertID", StringType, true)
-    .add("advertName", StringType, true)
+    .add("transactionDate", StringType, true)
+    .add("storeID", StringType, true)
+    .add("laneID", StringType, true)
+    .add("customerName", StringType, true)
     .add("brand", StringType, true)
+    .add("country", StringType, true)
 
 
-val advertsDF = df
+val storeDF = df
   .select($"body".cast("string").alias("json"))
-  .withColumn("data", from_json(col("json"), advertsSchema))
-  .filter($"data.EntityType" === "Adverts")
+  .withColumn("data", from_json(col("json"), storeSchema))
+  .filter($"data.EntityType" === "Store-Transaction")
   .select("data.*")
 
-//display(advertsDF)
+display(storeDF)
+
+
+// COMMAND ----------
+
+storeDF.write.format("delta").save(path+"curated/storeTransactions")
