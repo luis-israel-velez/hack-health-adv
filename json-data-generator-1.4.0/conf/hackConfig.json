@@ -5,7 +5,7 @@
         }],
     "producers": [{
         "type": "iothub",
-        "connectionString": "HostName=lv-iot-streaming.azure-devices.net;DeviceId=store;SharedAccessKey=8nBv1EH5wlqjYaDTzKGLGougw3IMpEq9EI64vjNUztw=",
+        "connectionString": "HostName=hack-eastus2-iothealthadv.azure-devices.net;DeviceId=stores;SharedAccessKey=Gy7GGHAMeIUhiGAram789wHa3PYbPC/xT2dXFF9RxOY=",
         "protocol": "HTTPS"
     }]
 }
