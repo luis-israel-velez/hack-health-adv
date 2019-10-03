@@ -1,0 +1,18 @@
+  
+{
+  "eventFrequency": 500,
+  "varyEventFrequency": false,
+  "repeatWorkflow": true,
+  "timeBetweenRepeat": 0,
+  "varyRepeatFrequency": false,
+  "steps": [{
+          "config" : [{"EntityType" : "Store-Transaction",
+                      "transactionDate" : "now()",
+                      "storeID" : "long(01, 100)", 
+                      "laneID" : "long(01,25)", 
+                      "customerName" : "firstName()",
+                      "brand" : "random('Pepsi','Coke','MuscleMilk','OrangeJuice','Water')",
+                      "country" : "random('US', 'JP', 'FR', 'UK', 'DE')"}
+                    ],
+           "duration" : 0}]
+}

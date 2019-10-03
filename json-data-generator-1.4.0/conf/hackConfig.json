@@ -1,0 +1,11 @@
+{
+    "workflows": [{
+            "workflowName": "Test",
+            "workflowFilename": "storeGenerator.json"
+        }],
+    "producers": [{
+        "type": "iothub",
+        "connectionString": "HostName=lv-iot-streaming.azure-devices.net;DeviceId=store;SharedAccessKey=8nBv1EH5wlqjYaDTzKGLGougw3IMpEq9EI64vjNUztw=",
+        "protocol": "HTTPS"
+    }]
+}
