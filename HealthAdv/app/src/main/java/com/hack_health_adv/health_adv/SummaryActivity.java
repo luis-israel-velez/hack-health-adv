@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -17,13 +20,13 @@ import android.widget.Toast;
 public class SummaryActivity extends AppCompatActivity {
 
     Button mysecondbutton;
+    private WebView webView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         Spinner myspinner = (Spinner) findViewById(R.id.spinner);
-
         ArrayAdapter<String> myadapter = new ArrayAdapter<String>(SummaryActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
         myadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
@@ -31,6 +34,12 @@ public class SummaryActivity extends AppCompatActivity {
 
         mysecondbutton= (Button)findViewById(R.id.button);
 
+        webView = findViewById(R.id.webview);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://app.powerbi.com/view?r=eyJrIjoiNmMwNmIyZmMtZDg0Yi00N2E0LThmZWUtMzIwYzQ3YTc1NGQzIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9");
 
 
         mysecondbutton.setOnClickListener(new View.OnClickListener() {

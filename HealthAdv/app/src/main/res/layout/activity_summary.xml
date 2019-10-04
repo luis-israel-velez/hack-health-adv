@@ -13,27 +13,14 @@
         android:layout_width="311dp"
         android:layout_height="87dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="-284dp"
-        android:layout_marginRight="-284dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="-280dp"
+        android:layout_marginRight="-280dp"
         android:layout_toStartOf="@+id/editText2"
         android:layout_toLeftOf="@+id/editText2"
         android:gravity="center"
         android:padding="20dp"
         android:textSize="100sp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="275dp"
-        android:layout_marginRight="65dp"
-        android:contentDescription="Enter Loyalty Card no."
-        android:ems="10"
-        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView3"
@@ -42,23 +29,45 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="321dp"
-        android:layout_marginRight="103dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginRight="97dp"
         android:text="Enter Loyalty card number"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textSize="14sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="188dp"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="201dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginBottom="46dp"
+        android:text="Detail Summary" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="394dp"
-        android:layout_marginRight="100dp"
-        android:text="SUBMIT" />
+        android:layout_marginTop="121dp"
+        android:layout_marginRight="69dp"
+        android:contentDescription="Enter Loyalty Card no."
+        android:ems="10"
+        android:inputType="textPersonName" />
+
     ​
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="411dp"
+        android:layout_height="212dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="0dp" />
 
 
 </RelativeLayout>

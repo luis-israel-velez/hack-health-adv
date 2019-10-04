@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Health Adviser</string>
+    <string name="app_name">NutriR</string>
     <string name="login">LOGIN</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
