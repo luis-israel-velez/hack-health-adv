@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        /*new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this)
                 .setTitle("Closing application")
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton(db.test(), new DialogInterface.OnClickListener() {
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
-                }).setNegativeButton("No", null).show();*/
+                }).setNegativeButton("No", null).show();
 
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +82,8 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(HomePage);
+                    //Intent SummaryActivity = new Intent(LoginActivity.this,SummaryActivity.class);
+                    //startActivity(SummaryActivity);
                 }
                 else
                 {
