@@ -20,6 +20,6 @@ public class DashboardActivity extends AppCompatActivity {
 
         webView.setWebViewClient(new WebViewClient());
         //webView.loadUrl("https://app.powerbi.com/view?r=eyJrIjoiMzllM2JlYmQtNDc0ZS00YzdjLWJmZGItNjZmYTY2Yjk2NDgwIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9");
-        webView.loadUrl("https://app.powerbi.com/view?r=eyJrIjoiN2NmZDU3MjEtZGNmYS00NDAxLWI1YmQtYTljMDZkYTk2NzFhIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9");
+        webView.loadUrl("https://app.powerbi.com/view?r=eyJrIjoiNmMyNzkyZmMtNTcwMy00MjU2LWE0YzAtYjRjMjJjZDg1Nzk5IiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9");
     }
 }
