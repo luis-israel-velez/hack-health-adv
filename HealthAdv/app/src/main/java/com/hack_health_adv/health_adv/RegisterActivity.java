@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
 
                 if(pwd.equals(cnf_pwd)){
-                    long val = db.addUser(user,pwd);
+                    long val = 1;//db.addUser(user,pwd);
                     if(val > 0){
                         Toast.makeText(RegisterActivity.this,"You have registered",Toast.LENGTH_SHORT).show();
                         Intent moveToLogin = new Intent(RegisterActivity.this,LoginActivity.class);
