@@ -19,6 +19,6 @@ public class DashboardActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.google.com/");
+        webView.loadUrl("https://app.powerbi.com/view?r=eyJrIjoiMzllM2JlYmQtNDc0ZS00YzdjLWJmZGItNjZmYTY2Yjk2NDgwIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9");
     }
 }
