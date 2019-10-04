@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import android.app.Dialog;
 import android.content.Intent;
+//import android.app.Dialog;
 //import android.support.v7.app.AppCompatActivity;
 //import android.os.Bundle;
 //import android.widget.LinearLayout;
 //import android.widget.ProgressBar;
+//import android.content.DialogInterface;
+//import android.app.AlertDialog;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,8 +19,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.content.DialogInterface;
-import android.app.AlertDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -34,14 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        //Dialog dialog = new Dialog(this,android.R.style.Theme_Translucent_NoTitleBar);
-        //View v = this.getLayoutInflater().inflate(R.layout.progressbar,null);
-        //dialog.setContentView(v);
-        //dialog.setContentView(R.layout.activity_login);
-       // dialog.show();
-
-
 
         db = new DatabaseHelper(this);
         mTextUsername = (EditText)findViewById(R.id.edittext_username);
@@ -62,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        new AlertDialog.Builder(this)
+        /*new AlertDialog.Builder(this)
                 .setTitle("Closing application")
                 .setMessage("Are you sure you want to exit?")
                 .setPositiveButton(db.test(), new DialogInterface.OnClickListener() {
@@ -70,18 +62,17 @@ public class LoginActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
-                }).setNegativeButton("No", null).show();
+                }).show();*/
 
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
-                Boolean res = true;//db.checkUser(user, pwd);
-                if(user.equals("luis") && pwd.equals("password"))
+                Boolean res = db.checkUser(user, pwd);
+
+                if (res == true)
                 {
-                    //Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
-                    //startActivity(HomePage);
                     Intent SummaryActivity = new Intent(LoginActivity.this,SummaryActivity.class);
                     startActivity(SummaryActivity);
                 }
