@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -38,9 +36,12 @@ public class SummaryActivity extends AppCompatActivity {
         mysecondbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent int1=new Intent("android.intent.action.VIEW", Uri.parse("https://app.powerbi.com/view?r=eyJrIjoiMzllM2JlYmQtNDc0ZS00YzdjLWJmZGItNjZmYTY2Yjk2NDgwIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9"));
-                startActivity(int1);
+                //Intent int1=new Intent("android.intent.action.VIEW", Uri.parse("https://app.powerbi.com/view?r=eyJrIjoiMzllM2JlYmQtNDc0ZS00YzdjLWJmZGItNjZmYTY2Yjk2NDgwIiwidCI6IjJlZGRjMzljLTI5OTYtNGMyYS1hYjk3LWY3NjdjMzllYTE1NSIsImMiOjF9"));
+                //startActivity(int1);
                 //Toast.makeText(SummaryActivity.this,"Hello",Toast.LENGTH_SHORT).show();
+                Intent dashboardActivity = new Intent(SummaryActivity.this,DashboardActivity.class);
+                startActivity(dashboardActivity);
+
             }
         });
 

@@ -80,10 +80,10 @@ public class LoginActivity extends AppCompatActivity {
                 Boolean res = true;//db.checkUser(user, pwd);
                 if(user.equals("luis") && pwd.equals("password"))
                 {
-                    Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(HomePage);
-                    //Intent SummaryActivity = new Intent(LoginActivity.this,SummaryActivity.class);
-                    //startActivity(SummaryActivity);
+                    //Intent HomePage = new Intent(LoginActivity.this,HomeActivity.class);
+                    //startActivity(HomePage);
+                    Intent SummaryActivity = new Intent(LoginActivity.this,SummaryActivity.class);
+                    startActivity(SummaryActivity);
                 }
                 else
                 {

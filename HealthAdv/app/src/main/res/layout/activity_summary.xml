@@ -7,53 +7,54 @@ android:layout_height="match_parent"
 tools:context="com.hack_health_adv.health_adv.SummaryActivity">
 
 
-<Spinner
-    android:id="@+id/spinner"
-    android:layout_width="184dp"
-    android:layout_height="59dp"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="68dp"
-    android:layout_marginEnd="21dp"
-    android:layout_marginRight="21dp"
-    android:layout_toStartOf="@+id/editText2"
-    android:layout_toLeftOf="@+id/editText2" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="184dp"
+        android:layout_height="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_toStartOf="@+id/editText2"
+        android:layout_toLeftOf="@+id/editText2" />
 
-<EditText
-    android:id="@+id/editText2"
-    android:layout_width="184dp"
-    android:layout_height="59dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentRight="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="67dp"
-    android:layout_marginRight="10dp"
-    android:contentDescription="Enter Loyalty Card no."
-    android:ems="10"
-    android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="184dp"
+        android:layout_height="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="Enter Loyalty Card no."
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-<TextView
-    android:id="@+id/textView3"
-    android:layout_width="187dp"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentRight="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="122dp"
-    android:layout_marginRight="5dp"
-    android:text="Enter Loyalty card number"
-    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-    android:textSize="14sp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp"
+        android:layout_marginRight="5dp"
+        android:text="Enter Loyalty card number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="14sp" />
 
-<Button
-    android:id="@+id/button"
-    android:layout_width="191dp"
-    android:layout_height="69dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentRight="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="293dp"
-    android:layout_marginRight="100dp"
-    android:text="SUBMIT" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="293dp"
+        android:layout_marginRight="100dp"
+        android:text="SUBMIT" />
+    ​
 
 
 </RelativeLayout>
