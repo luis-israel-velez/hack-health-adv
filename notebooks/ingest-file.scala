@@ -42,10 +42,11 @@ val storeSchema = new StructType()
     .add("EntityType", StringType, true)
     .add("transactionDate", StringType, true)
     .add("storeID", StringType, true)
-    .add("laneID", StringType, true)
     .add("customerName", StringType, true)
-    .add("brand", StringType, true)
-    .add("country", StringType, true)
+    .add("items", StringType, true)
+    .add("quantity", StringType, true)
+    .add("amount", StringType, true)
+    .add("volume", StringType, true)
 
 
 val storeDF = df
@@ -59,4 +60,21 @@ display(storeDF)
 
 // COMMAND ----------
 
-storeDF.write.format("delta").save(path+"curated/storeTransactions")
+val finalDF = storeDF
+  .withColumn("cal_dt", col("transactionDate"))
+  .withColumn("hashed_cnsmr_id_nbr", col("customerName"))
+  .withColumn("trade_item_cd", col("items"))
+  .withColumn("trade_item_desc", lit("N/A"))
+  .withColumn("cat_desc", lit("N/A"))
+  .withColumn("purch_qty", col("quantity"))
+  .withColumn("purch_amt", col("amount"))
+  .withColumn("vol_wgt_qty", col("volume"))
+  .withColumn("lgl_entity_nm", col("storeID"))
+  .drop("quantity", "items", "amount", "volume", "storeID", "items", "customerName", "transactionDate", "EntityType")
+  .select("*")
+
+display(finalDF)
+
+// COMMAND ----------
+
+finalDF.write.format("delta").save(path+"curated/storeTransactions")
