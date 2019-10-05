@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         mButtonLogin = (Button)findViewById(R.id.button_login);
         mTextViewRegister = (TextView)findViewById(R.id.textview_register);
 
-
         mTextViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,23 +53,12 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        /*new AlertDialog.Builder(this)
-                .setTitle("Closing application")
-                .setMessage("Are you sure you want to exit?")
-                .setPositiveButton(db.test(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                }).show();*/
-
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 Boolean res = db.checkUser(user, pwd);
-
                 if (res == true)
                 {
                     Intent SummaryActivity = new Intent(LoginActivity.this,SummaryActivity.class);
