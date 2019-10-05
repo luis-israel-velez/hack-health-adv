@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -58,11 +59,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         //onCreate(sqLiteDatabase);
     }
 
-    public boolean checkUser(String username_inp, String password_inp){
+    public boolean checkUser(String usernameImp, String passwordImp){
 
+        Statement stmt = null;
         try {
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM user_t WHERE username = '" + username_inp + "' and password = '" + password_inp + "' ;");
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user_t WHERE username = '" + usernameImp + "' and password = '" + passwordImp + "' ;");
             while (rs.next()) {
                 if (rs.getString("username") != null) {
                     stmt.close();
@@ -75,17 +77,39 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             Log.e(TAG, e.getMessage());
         }
 
+        try { stmt.close(); } catch (Exception e) { }
         return  false;
     }
 
 
-    public long addUser(String user, String password){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("username",user);
-        contentValues.put("password",password);
-        long res = db.insert("registeruser",null,contentValues);
-        db.close();
-        return  res;
+    public String addUser(String usernameImp, String passwordImp){
+        Statement stmt = null;
+        Boolean res = checkUser(usernameImp, passwordImp);
+        String sql = "INSERT INTO user_t(username, password, household_count, created_date, last_login) " +
+                "VALUES ('" + usernameImp + "', '" + passwordImp + "', 1, GETDATE(), CURRENT_TIMESTAMP);";
+        if (res == false) {
+            try {
+                stmt = conn.createStatement();
+                int rs = stmt.executeUpdate(sql);
+                if (rs == 1) {
+                    stmt.close();
+                    return "Success";
+                }
+                return "Error " + rs;
+            } catch (SQLException e) {
+                Log.e(TAG, e.getMessage());
+                return "Error SQLException - " + e.getMessage() + " " + sql;
+            } catch (Exception e) {
+                Log.e(TAG, e.getMessage());
+                return "Error Exception - " + e.getMessage();
+            }  finally {
+                try {
+                    if (stmt != null) {
+                        stmt.close();
+                    }
+                } catch (Exception e) { }
+            }
+        }
+        return "User Already Exist";
     }
 }
