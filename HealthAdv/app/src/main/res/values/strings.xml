@@ -8,6 +8,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="already_registered">Already Registered?</string>
     <string name="welcome_user">Welcome User</string>
+    <string name="loyalty_input">Enter Loyalty Card no.</string>
+    <string name="detail_summary">Detail Summary</string>
 
 
     <string-array name="names">
