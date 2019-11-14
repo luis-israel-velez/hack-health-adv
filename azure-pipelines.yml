@@ -16,7 +16,9 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    pip install databricks-cli
-    databricks configure --token https://eastus2.azuredatabricks.net dapi883576c6204113b7e4a8b09f3d717444
-    databricks jobs run-now --job-id 3
-  displayName: 'Run a multi-line script'
+    displayName: 'Run a multi-line script'
+
+- script: pip install databricks-cli
+  displayName: 'Install CLI'
+
+
