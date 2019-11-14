@@ -1,4 +1,3 @@
-# Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -10,14 +9,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: pip install --upgrade pip
-  displayName: 'Update pip'
-
-- script: pip install databricks-cli
-  displayName: 'Install CLI'
-
-- script: databricks --version
-  displayName: 'Version'
+- task: configuredatabricks@0
+  inputs:
+    url: 'https://eastus2.azuredatabricks.net'
+    token: 'dapi883576c6204113b7e4a8b09f3d717444'
+# Starter pipeline
+- task: executenotebook@0
+  inputs:
+    notebookPath: '/Users/luis_training@outlook.com/stream-test'
+    existingClusterId: 'lv-test'
