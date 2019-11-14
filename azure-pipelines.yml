@@ -16,8 +16,5 @@ steps:
 - script: pip install databricks-cli
   displayName: 'Install CLI'
 
-- script: databricks configure --token https://eastus2.azuredatabricks.net dapi883576c6204113b7e4a8b09f3d717444
-  displayName: 'Configure Repo'
-
-- script: databricks jobs run-now --job-id 3
-  displayName: 'Run notebook'
+- script: databricks --version
+  displayName: 'Version'
