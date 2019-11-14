@@ -13,6 +13,9 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- script: pip install --upgrade pip
+  displayName: 'Update pip'
+
 - script: pip install databricks-cli
   displayName: 'Install CLI'
 
